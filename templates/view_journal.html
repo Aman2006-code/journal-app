@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+    <head>
+        <title> My Journal - {{ entry['id'] }} </title>
+    </head>
+    <body>
+        <h1><u> {{entry['heading']}} - {{entry['date']}}  </u></h1><br><br>
+        <p><b>{{ entry['entry'] }}</b></p>
+        <a href="/journals/delete/{{entry['id']}}"><button><b> DELETE </b></button></a>
+        <a href="/journals/edit/{{entry['id']}}"><button><b> EDIT </b></button></a></br>
+        <a href="/"><p>click here to go to home page</p></a>
+    </body>
+</html>

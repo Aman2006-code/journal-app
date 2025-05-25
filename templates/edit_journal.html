@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+
+
+    <head>
+        <title> My Journal - edit_journal </title>
+    </head>
+
+    <body>
+        <form action="{{url_for('edit_journal', journal_id = entry['id'])}}" method="POST">
+            Heading:<br>
+            <input type="text" name="heading" value="{{entry['heading']}}"><br><br>
+            <textarea rows="15" cols="80" name="entry">{{entry['entry']}}</textarea><br><br>
+            <input type="submit" value="Update Entry">
+        </form>
+    </body>
+
+    
+</html>

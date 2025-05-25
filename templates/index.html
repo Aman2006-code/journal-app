@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+
+    <head>
+        <title> My Journal </title>
+    </head>
+
+
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% else %}
+                <h1><b>Hello World, Welcome to My Journal Application</b></h1> <br>
+                <b>Login or sign up and have some fun !!!</b> <br>
+                <h1>:) </h1><br>
+            {% endif %}
+        {% endwith %}
+
+
+        <h2><a href = '/login'><b><button> CLICK HERE TO LOGIN </button></b></a></h2>
+        <h2><a href = '/signup'><b><button> CLICK HERE TO SIGNUP </button></b></a></h2>
+
+           
+
+    </body>
+
+
+</html>

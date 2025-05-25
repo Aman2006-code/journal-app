@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+
+    <head>
+        <title> My Journal - Home  </title>
+    </head>
+
+
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }} <br>
+                {% endfor %}
+                <a href="/"><button><b> Go back to Home Page</b></button></a>
+            {% endif %}
+        {% endwith %}
+        <h1>Welcome {{ username }}!!!</h1><br>
+        <h1> :) </h1> <br>
+
+                {% for journal in journals %}
+                    <div><a href="/journals/{{journal[0]}}" > {{ journal[1] }} — {{ journal[2] }}</a></div><br><br>
+                {% endfor %}
+  
+        <a href="/new_journal"><button><b> Click Here to add a new Journal </b></button></a>
+        <a href = "/logout"><button><b> Click here to logout </b></button></a>
+
+    </body>
+
+
+</html>

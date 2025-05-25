@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+
+    <head>
+        <title> My Journal - Sign up </title>
+    </head>
+
+
+    <body>
+        <form action = "{{url_for ('new_user')}}" method = "POST">
+            <h1><u><b> SIGN UP AS NEW USER </b></u></h1>
+            USERNAME<br>
+            <input type = "text" name = "nm" required> <br>
+            PASSWORD<br>
+            <input type = "password" name = "pwd" required><br>
+            <input type = "submit" value = "signup" /> <br>
+        </form>
+    </body>
+
+
+</html>
