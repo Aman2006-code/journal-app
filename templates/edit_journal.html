@@ -1,19 +1,74 @@
 <!doctype html>
 <html>
 
+<head>
+    <title>My Journal - Edit Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
 
-    <head>
-        <title> My Journal - edit_journal </title>
-    </head>
+        h1 {
+            text-align: center;
+            color: #333;
+        }
 
-    <body>
-        <form action="{{url_for('edit_journal', journal_id = entry['id'])}}" method="POST">
-            Heading:<br>
-            <input type="text" name="heading" value="{{entry['heading']}}"><br><br>
-            <textarea rows="15" cols="80" name="entry">{{entry['entry']}}</textarea><br><br>
-            <input type="submit" value="Update Entry">
-        </form>
-    </body>
+        form {
+            background-color: #fff;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit Journal Entry</h1>
+    <form action="{{url_for('edit_journal', journal_id=entry['id'])}}" method="POST">
+        <label for="heading">Heading:</label>
+        <input type="text" id="heading" name="heading" value="{{entry['heading']}}">
+
+        <label for="entry">Entry:</label>
+        <textarea id="entry" rows="15" cols="80" name="entry">{{entry['entry']}}</textarea>
+
+        <input type="submit" value="Update Entry">
+    </form>
+</body>
+
 </html>

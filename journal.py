@@ -84,7 +84,7 @@ def existing_user():
             flash('login successfull')
             return redirect(url_for('index'))
         else:
-            return "Login failed. <a href='login'>Try again</a> or <a href='index'>return Home </a> or <a href='signup'> Sign Up </a>"
+            return "Login failed. <a href='login'>Try again</a> or <a href='signup'> Sign Up </a>"
 
 
 
@@ -232,5 +232,3 @@ create_journals()
 create_tables()
 if __name__ == '__main__':
     app.run(debug = True)
-
-

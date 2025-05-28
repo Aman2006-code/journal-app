@@ -1,32 +1,100 @@
 <!doctype html>
 <html>
 
+<head>
+    <title>My Journal - Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 30px;
+            text-align: center;
+        }
 
-    <head>
-        <title> My Journal - Home  </title>
-    </head>
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
 
+        .flash-message {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+            color: #31708f;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
 
-    <body>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    {{ message }} <br>
-                {% endfor %}
-                <a href="/"><button><b> Go back to Home Page</b></button></a>
-            {% endif %}
-        {% endwith %}
-        <h1>Welcome {{ username }}!!!</h1><br>
-        <h1> :) </h1> <br>
+        a {
+            text-decoration: none;
+        }
 
-                {% for journal in journals %}
-                    <div><a href="/journals/{{journal[0]}}" > {{ journal[1] }} — {{ journal[2] }}</a></div><br><br>
-                {% endfor %}
-  
-        <a href="/new_journal"><button><b> Click Here to add a new Journal </b></button></a>
-        <a href = "/logout"><button><b> Click here to logout </b></button></a>
+        .journal-entry {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px auto;
+            width: 60%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+        }
 
-    </body>
+        .journal-entry a {
+            color: #2980b9;
+            font-size: 18px;
+            font-weight: bold;
+        }
 
+        .button-container {
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="flash-message">{{ message }}</div><br>
+            {% endfor %}
+            <div class="button-container">
+                <a href="/"><button><b>Go back to Home Page</b></button></a>
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <h1>Welcome {{ username }}!!!</h1>
+    <h1>😊</h1>
+
+    {% for journal in journals %}
+        <div class="journal-entry">
+            <a href="/journals/{{ journal[0] }}">{{ journal[1] }} — {{ journal[2] }}</a>
+        </div>
+    {% endfor %}
+
+    <div class="button-container">
+        <a href="/new_journal"><button><b>Click Here to add a new Journal</b></button></a>
+        <a href="/logout"><button><b>Click here to Logout</b></button></a>
+    </div>
+
+</body>
 
 </html>

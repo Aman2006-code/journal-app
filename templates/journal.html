@@ -1,22 +1,86 @@
 <!doctype html>
 <html>
- 
 
-    <head>
-        <title> My Journal - New Journal</title>
-    </head>
+<head>
+    <title>My Journal - New Journal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f4f8;
+            color: #333;
+            padding: 50px;
+            text-align: center;
+        }
 
-    <body>
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
 
-        <form action="/journal" method="POST">
-            <h1>What's about today!!!</h1>
-            <b> Date : </b> <input type="date" name = "date" required><br><br>
-            <b> TITLE : </b> <input type="text" name="heading" required><br><br>
-            <textarea rows="15" cols="80" name="entry" placeholder="Write your journal entry here..." required></textarea><br><br>
-            <input type="submit" value="submit"> <br>
-        </form>
+        form {
+            background-color: #ffffff;
+            padding: 40px;
+            margin: 0 auto;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
 
-    </body>
+        label, b {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
 
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="/journal" method="POST">
+        <h1>What's about today!!!</h1>
+        
+        <label for="date"><b>Date:</b></label>
+        <input type="date" name="date" id="date" required>
+
+        <label for="heading"><b>Title:</b></label>
+        <input type="text" name="heading" id="heading" required>
+
+        <label for="entry"><b>Your Entry:</b></label>
+        <textarea rows="15" cols="80" name="entry" id="entry" placeholder="Write your journal entry here..." required></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
 
 </html>

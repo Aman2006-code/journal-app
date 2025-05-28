@@ -1,32 +1,75 @@
 <!doctype html>
 <html>
 
+<head>
+    <title>My Journal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-    <head>
-        <title> My Journal </title>
-    </head>
+        h1 {
+            font-size: 32px;
+            color: #2c3e50;
+        }
 
+        h2 {
+            margin: 20px 0;
+        }
 
-    <body>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
-            {% else %}
-                <h1><b>Hello World, Welcome to My Journal Application</b></h1> <br>
-                <b>Login or sign up and have some fun !!!</b> <br>
-                <h1>:) </h1><br>
-            {% endif %}
-        {% endwith %}
+        .message {
+            font-size: 18px;
+            margin-bottom: 30px;
+            background-color: #e0f7fa;
+            border-left: 6px solid #00acc1;
+            display: inline-block;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
 
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-        <h2><a href = '/login'><b><button> CLICK HERE TO LOGIN </button></b></a></h2>
-        <h2><a href = '/signup'><b><button> CLICK HERE TO SIGNUP </button></b></a></h2>
+        button:hover {
+            background-color: #0056b3;
+        }
 
-           
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
 
-    </body>
+<body>
 
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message">{{ message }}</div>
+            {% endfor %}
+        {% else %}
+            <h1><b>Hello World, Welcome to My Journal Application</b></h1>
+            <p><b>Login or sign up and have some fun !!!</b></p>
+            <h1>😊</h1>
+        {% endif %}
+    {% endwith %}
+
+    <h2><a href='/login'><button><b>CLICK HERE TO LOGIN</b></button></a></h2>
+    <h2><a href='/signup'><button><b>CLICK HERE TO SIGNUP</b></button></a></h2>
+
+</body>
 
 </html>
+

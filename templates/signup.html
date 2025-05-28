@@ -1,22 +1,74 @@
 <!doctype html>
 <html>
 
+<head>
+    <title>My Journal - Sign Up</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    <head>
-        <title> My Journal - Sign up </title>
-    </head>
+        form {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
 
+        h1 {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
 
-    <body>
-        <form action = "{{url_for ('new_user')}}" method = "POST">
-            <h1><u><b> SIGN UP AS NEW USER </b></u></h1>
-            USERNAME<br>
-            <input type = "text" name = "nm" required> <br>
-            PASSWORD<br>
-            <input type = "password" name = "pwd" required><br>
-            <input type = "submit" value = "signup" /> <br>
-        </form>
-    </body>
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
 
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="{{ url_for('new_user') }}" method="POST">
+        <h1><u><b>SIGN UP AS NEW USER</b></u></h1>
+
+        <label for="nm">USERNAME</label><br>
+        <input type="text" name="nm" id="nm" required><br>
+
+        <label for="pwd">PASSWORD</label><br>
+        <input type="password" name="pwd" id="pwd" required><br>
+
+        <input type="submit" value="Sign Up">
+    </form>
+
+</body>
 
 </html>
