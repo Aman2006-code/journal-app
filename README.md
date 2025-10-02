@@ -1,6 +1,6 @@
 # My Journal App 📝
 
-A simple Flask-based web app to write and manage personal journal entries.
+A simple Flask-based web app to write and manage personal journal entries!
 
 ## Features
 - Add, edit, and delete journal entries
